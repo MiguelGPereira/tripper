@@ -3,7 +3,7 @@
     {% block head %}
         {% include "partials/content_type.html.tpl" %}
         {% include "partials/includes.html.tpl" %}
-        <title>Layout / {% block title %}{% endblock %}</title>
+        <title>Tripper / {% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
 <body class="ux wait-load {{ session.sub_type|default('', True) }} {{ session.style|default('', True) }}" >
@@ -13,16 +13,19 @@
             {% include "partials/header.html.tpl" %}
             <h1>{% block name %}{% endblock %}</h1>
             <div class="links">
-                {% if link == "home" %}
-                    <a href="/" class="active">home</a>
+                <script type="application/javascript">
+                    console.log("[{{ links }}]");
+                </script>
+                {% if title == "Home" %}
+                    <a id="{{ link }}" href="{{ url_for('base.index') }}" class="active">home</a>
                 {% else %}
-                    <a href="/">home</a>
+                    <a href="{{ url_for('base.index') }}">home</a>
                 {% endif %}
                 //
                 {% if link == "trips" %}
-                    <a href="/trips" class="active">show</a>
+                    <a href="{{ url_for('trip.list') }}">show</a>
                 {% else %}
-                    <a href="/trips">show</a>
+                    <a href="{{ url_for('trip.list') }}">show</a>
                 {% endif %}
             </div>
         {% endblock %}

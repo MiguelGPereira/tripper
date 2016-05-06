@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/layout.css') }}" />
 
 <!-- favicon inclusion -->
-<link rel="shortcut icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}" />
 
 <!-- javascript inclusion -->
 {% if session.libs == "legacy" %}

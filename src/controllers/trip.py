@@ -21,7 +21,7 @@ class TripController(appier.Controller):
         trip.save()
         return self.redirect("/trips")
 
-    @appier.route("/trips/<name>", "DELETE")
+    @appier.route("/trips/<str:name>", "DELETE")
     def remove(self, arg):
         trip = models.Trip.find(name=arg)[0]
         trip.delete()

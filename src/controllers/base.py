@@ -6,9 +6,7 @@ class BaseController(appier.Controller):
     @appier.route("/index", "GET", json = True)
     def index(self):
         return self.template(
-            "static/index.html.tpl",
-            index = "/",
-            trips = "/trips"
+            "static/index.html.tpl"
         )
 
     @appier.route("/headers", "GET", json = True)
