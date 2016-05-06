@@ -1,0 +1,12 @@
+.idea
+
+*.pyc
+
+session.shelve*
+
+/dist
+/build
+/src/budy.egg-info
+
+.project
+.pydevproject
